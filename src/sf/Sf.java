@@ -19,22 +19,31 @@ public class Sf {
         // TODO code application logic here
     Scanner entrada= new Scanner(System.in);
     
-    int ntoros=0, velmax=0, veli=0, veli2=0, velocidadess=0;
-   
-    
-    System.out.println ("¿Cuántos toros corrieron?");
-    ntoros=entrada.nextInt();
-    
-    System.out.println ("Introduce las velocidades");
-    //falta leer string de números e imprimir el resultado
-    for (int i=0;i!=ntoros;i++){
-    veli=entrada.nextInt();    
-        if (veli>velmax){
-            velmax=veli;
+    int numToros=0;
+        int velocidad=0;
+        int velocidadMaxima=0;
+        
+        System.out.println ("Introduce la información de toros y velocidades:");
+        numToros=entrada.nextInt();
+        
+        while (numToros>0){
+            
+            for (int i=1; i<=numToros;i++){
+                velocidad=entrada.nextInt();
+                    if (velocidad>velocidadMaxima){
+                    velocidadMaxima=velocidad;
+                    }
+                
+            }
+            
+            System.out.println ("La velocidad máxima del corredor debe ser:"+ velocidadMaxima);
+            velocidadMaxima=0;
+            System.out.println ("Introduce la información de toros y velocidades:");
+            numToros=entrada.nextInt();
         }
-    }
-    
-    System.out.println ("La velocidad máxima debe ser: "+velmax);
+        
+        
+        System.out.println ("Fin del programa.");
     }//cierre1
     
 }//cierre2
